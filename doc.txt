@@ -1,0 +1,44 @@
+// DB structure 
+
+blog :
+
+	username
+	blog-body
+	images
+	publish/draft 
+	date
+
+user:
+
+	user id
+	fb id
+	pass
+	emailid
+	info
+		name
+		profile-pic
+		~followers
+		~following
+
+
+CREATE TABLE db_users (
+	uid TEXT primary key ,
+	fbid TEXT,
+	pass TEXT,
+	email TEXT,
+	name TEXT,
+	profile_pic TEXT
+);
+
+CREATE TABLE db_blog (
+	username TEXT ,
+	blog_body TEXT,
+	image TEXT,
+	publish BOOL,
+	date TEXT
+);
+
+CREATE TABLE db_comment (
+	commentid TEXT references db_blog(blogid),
+	comment TEXT
+);

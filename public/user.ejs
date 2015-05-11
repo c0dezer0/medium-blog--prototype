@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<center>
+
+	User: <%=uid.displayName%> <br>
+<a href="/newblog">Create New</a>
+<br>
+	<% if (data.length === 0){%>
+		<p>No Blog</p>
+	<%} else {%>
+		<% for(var i=0;i<data.length;i++) {%>
+			<h3><%= JSON.parse(data[i].blog_body)[0].value %></h3><br>
+			<p><%= JSON.parse(data[i].blog_body)[1].value %> </p>
+			<br>
+			<hr>
+			<br>
+		<% } %>
+	<% } %>
+
+
+</center>
+
+</body>
+
+</html>
